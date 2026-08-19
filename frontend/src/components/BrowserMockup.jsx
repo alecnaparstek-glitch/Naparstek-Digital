@@ -8,14 +8,14 @@ export const BrowserMockup = ({ src, fallback, url, alt, className = "", tall = 
   return (
     <div
       data-testid="browser-mockup"
-      className={`group rounded-xl border border-white/10 bg-[#16161A] overflow-hidden shadow-2xl shadow-black/40 ${className}`}
+      className={`group rounded-lg border border-white/12 bg-[#111111] overflow-hidden shadow-2xl shadow-black/60 ${className}`}
     >
-      <div className="h-10 border-b border-white/10 bg-[#1A1A1E] flex items-center px-4 gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-        <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+      <div className="h-10 border-b border-white/10 bg-[#161616] flex items-center px-4 gap-2">
+        <span className="w-2.5 h-2.5 rounded-full border border-white/25" />
+        <span className="w-2.5 h-2.5 rounded-full border border-white/25" />
+        <span className="w-2.5 h-2.5 rounded-full border border-white/25" />
         {host && (
-          <div className="ml-3 flex-1 truncate rounded-md bg-white/5 px-3 py-1 text-[11px] text-[#8B8B93]">
+          <div className="ml-3 flex-1 truncate rounded-sm bg-white/5 px-3 py-1 text-[11px] tracking-wide text-[#9A9A9A]">
             {host}
           </div>
         )}

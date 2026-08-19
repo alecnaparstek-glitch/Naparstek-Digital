@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Phone, Mail } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import {
   Select,
@@ -11,19 +11,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CONTACT_EMAIL } from "@/lib/data";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL } from "@/lib/data";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-const NEEDS = ["New Website", "Website Redesign", "Landing Page", "Mobile Optimization", "Website Updates", "Not sure yet"];
+const NEEDS = ["New Website", "Website Redesign", "Landing Page", "SEO", "Branding", "Mobile Optimization", "Website Updates", "Not sure yet"];
 const BUDGETS = ["Under $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+", "Let's discuss"];
 
 const fieldBase =
-  "w-full bg-transparent border-b border-white/15 py-3 text-base text-[#F4F4F1] placeholder:text-[#8B8B93]/60 focus:outline-none focus:border-[#D45B3E] transition-colors";
+  "w-full bg-transparent border-b border-white/15 py-3 text-base text-[#F5F5F5] placeholder:text-[#9A9A9A]/60 focus:outline-none focus:border-[#F5F5F5] transition-colors";
 
 const Field = ({ label, name, type = "text", value, onChange, placeholder, required }) => (
   <div>
-    <label className="block text-xs uppercase tracking-[0.18em] text-[#8B8B93] mb-2">{label}</label>
+    <label className="block text-xs uppercase tracking-[0.18em] text-[#9A9A9A] mb-2">{label}</label>
     <input
       type={type}
       name={name}
@@ -69,16 +69,16 @@ const Contact = () => {
     <div data-testid="page-contact" className="pt-40 md:pt-52">
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-16 md:pb-24">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#D45B3E]">Start a Project</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Start a Project</p>
         </Reveal>
         <div className="mt-6 overflow-hidden">
           <motion.h1
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tighter leading-[0.9]"
+            className="font-heading text-5xl sm:text-7xl md:text-8xl font-medium tracking-tighter leading-[0.9]"
           >
-            Let's build something <span className="font-accent italic font-normal text-[#D45B3E]">great.</span>
+            Let's build something <span className="font-accent italic font-normal text-[#9A9A9A]">great.</span>
           </motion.h1>
         </div>
       </section>
@@ -88,24 +88,36 @@ const Contact = () => {
           {/* Left */}
           <div className="col-span-12 lg:col-span-4">
             <Reveal>
-              <p className="text-base md:text-lg leading-relaxed text-[#8B8B93]">
+              <p className="text-base md:text-lg leading-relaxed text-[#9A9A9A]">
                 Tell me a little about your business and what you're looking for. I read every message personally and
                 usually reply within a day or two.
               </p>
-              <div className="mt-12">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#8B8B93] mb-3">Email</p>
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  data-testid="contact-email-link"
-                  className="font-heading text-xl md:text-2xl font-medium text-[#F4F4F1] hover:text-[#D45B3E] transition-colors break-all"
-                >
-                  {CONTACT_EMAIL}
-                </a>
+              <div className="mt-12 space-y-6">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#9A9A9A] mb-3">Email</p>
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    data-testid="contact-email-link"
+                    className="flex items-center gap-3 font-heading text-lg md:text-xl font-medium text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors break-all"
+                  >
+                    <Mail size={18} className="text-[#9A9A9A] shrink-0" /> {CONTACT_EMAIL}
+                  </a>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#9A9A9A] mb-3">Phone</p>
+                  <a
+                    href={`tel:${CONTACT_PHONE_TEL}`}
+                    data-testid="contact-phone-link"
+                    className="flex items-center gap-3 font-heading text-lg md:text-xl font-medium text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors"
+                  >
+                    <Phone size={18} className="text-[#9A9A9A] shrink-0" /> {CONTACT_PHONE}
+                  </a>
+                </div>
               </div>
               <div className="mt-10 space-y-3">
                 {["A website built around your business", "Clear communication throughout", "Modern, mobile-friendly design"].map((x) => (
-                  <div key={x} className="flex items-center gap-3 text-sm text-[#8B8B93]">
-                    <Check size={16} className="text-[#D45B3E]" /> {x}
+                  <div key={x} className="flex items-center gap-3 text-sm text-[#9A9A9A]">
+                    <Check size={16} className="text-[#F5F5F5]" /> {x}
                   </div>
                 ))}
               </div>
@@ -118,17 +130,17 @@ const Contact = () => {
               <Reveal>
                 <div
                   data-testid="contact-success"
-                  className="rounded-2xl border border-white/10 bg-[#16161A] p-12 text-center"
+                  className="rounded-xl border border-white/12 bg-[#111111] p-12 text-center"
                 >
-                  <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#D45B3E]">
-                    <Check size={26} className="text-[#F4F4F1]" />
+                  <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                    <Check size={26} className="text-[#0A0A0A]" />
                   </div>
-                  <h2 className="font-heading text-3xl font-bold">Message sent.</h2>
-                  <p className="mt-4 text-[#8B8B93]">Thanks for reaching out — I'll get back to you shortly.</p>
+                  <h2 className="font-heading text-3xl font-medium">Message sent.</h2>
+                  <p className="mt-4 text-[#9A9A9A]">Thanks for reaching out — I'll get back to you shortly.</p>
                   <button
                     onClick={() => setSent(false)}
                     data-testid="contact-send-another"
-                    className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm text-[#F4F4F1] hover:bg-white/5 transition-colors"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-xs uppercase tracking-[0.14em] text-[#F5F5F5] hover:bg-white/5 transition-colors"
                   >
                     Send another inquiry
                   </button>
@@ -144,17 +156,17 @@ const Contact = () => {
                   <Field label="Current Website" name="current_website" value={form.current_website} onChange={onChange} placeholder="yoursite.com (if any)" />
 
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-[#8B8B93] mb-2">What do you need?</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#9A9A9A] mb-2">What do you need?</label>
                     <Select value={form.need} onValueChange={(v) => setForm((f) => ({ ...f, need: v }))}>
                       <SelectTrigger
                         data-testid="contact-need"
-                        className="w-full bg-transparent border-0 border-b border-white/15 rounded-none px-0 py-3 h-auto text-base text-[#F4F4F1] focus:ring-0 focus:border-[#D45B3E] data-[placeholder]:text-[#8B8B93]/60"
+                        className="w-full bg-transparent border-0 border-b border-white/15 rounded-none px-0 py-3 h-auto text-base text-[#F5F5F5] focus:ring-0 focus:border-[#F5F5F5] data-[placeholder]:text-[#9A9A9A]/60"
                       >
                         <SelectValue placeholder="Select an option" />
                       </SelectTrigger>
-                      <SelectContent className="bg-[#16161A] border-white/10 text-[#F4F4F1]">
+                      <SelectContent className="bg-[#111111] border-white/10 text-[#F5F5F5]">
                         {NEEDS.map((n) => (
-                          <SelectItem key={n} value={n} className="focus:bg-white/10 focus:text-[#F4F4F1]">
+                          <SelectItem key={n} value={n} className="focus:bg-white/10 focus:text-[#F5F5F5]">
                             {n}
                           </SelectItem>
                         ))}
@@ -163,17 +175,17 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-[0.18em] text-[#8B8B93] mb-2">Budget Range</label>
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#9A9A9A] mb-2">Budget Range</label>
                     <Select value={form.budget} onValueChange={(v) => setForm((f) => ({ ...f, budget: v }))}>
                       <SelectTrigger
                         data-testid="contact-budget"
-                        className="w-full bg-transparent border-0 border-b border-white/15 rounded-none px-0 py-3 h-auto text-base text-[#F4F4F1] focus:ring-0 focus:border-[#D45B3E] data-[placeholder]:text-[#8B8B93]/60"
+                        className="w-full bg-transparent border-0 border-b border-white/15 rounded-none px-0 py-3 h-auto text-base text-[#F5F5F5] focus:ring-0 focus:border-[#F5F5F5] data-[placeholder]:text-[#9A9A9A]/60"
                       >
                         <SelectValue placeholder="Select a range" />
                       </SelectTrigger>
-                      <SelectContent className="bg-[#16161A] border-white/10 text-[#F4F4F1]">
+                      <SelectContent className="bg-[#111111] border-white/10 text-[#F5F5F5]">
                         {BUDGETS.map((b) => (
-                          <SelectItem key={b} value={b} className="focus:bg-white/10 focus:text-[#F4F4F1]">
+                          <SelectItem key={b} value={b} className="focus:bg-white/10 focus:text-[#F5F5F5]">
                             {b}
                           </SelectItem>
                         ))}
@@ -182,7 +194,7 @@ const Contact = () => {
                   </div>
 
                   <div className="sm:col-span-2">
-                    <label className="block text-xs uppercase tracking-[0.18em] text-[#8B8B93] mb-2">
+                    <label className="block text-xs uppercase tracking-[0.18em] text-[#9A9A9A] mb-2">
                       Tell me about your project
                     </label>
                     <textarea
@@ -202,7 +214,7 @@ const Contact = () => {
                       type="submit"
                       disabled={loading}
                       data-testid="contact-submit"
-                      className="inline-flex items-center gap-2 rounded-full bg-[#D45B3E] px-8 py-4 text-sm font-medium text-[#F4F4F1] transition-transform hover:scale-[1.03] active:scale-[0.98] disabled:opacity-60 disabled:hover:scale-100"
+                      className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-xs uppercase tracking-[0.14em] font-medium text-[#0A0A0A] transition-colors hover:bg-white/90 disabled:opacity-60"
                     >
                       {loading ? "Sending..." : "Send Project Inquiry"} <ArrowUpRight size={16} />
                     </button>

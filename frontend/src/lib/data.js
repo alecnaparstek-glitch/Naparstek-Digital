@@ -1,11 +1,11 @@
-// Central content data for the studio site.
+// Central content data for Naparstek Digital.
 
 export const REAL_PROJECTS = [
   {
     index: "01",
     slug: "alpaca-furniture",
     title: "Alpaca Furniture Revitalization",
-    category: "Furniture Restoration • Kansas City",
+    category: "Furniture Restoration — Kansas City",
     url: "https://alpaca-furniture-revitalization.alec-naparstek.workers.dev/",
     shot: "https://image.thum.io/get/width/1280/crop/1000/noanimate/https://alpaca-furniture-revitalization.alec-naparstek.workers.dev/",
     fallback:
@@ -18,7 +18,7 @@ export const REAL_PROJECTS = [
     index: "02",
     slug: "stripes-lawn-care",
     title: "Stripes Lawn Care",
-    category: "Local Service • Olathe, Kansas",
+    category: "Local Service — Olathe, Kansas",
     url: "https://stripes-lawn-care.alec-naparstek.workers.dev/",
     shot: "https://image.thum.io/get/width/1280/crop/1000/noanimate/https://stripes-lawn-care.alec-naparstek.workers.dev/",
     fallback:
@@ -94,5 +94,8 @@ export const CARE = [
   "Helping small businesses look professional",
 ];
 
-export const CONTACT_EMAIL = "hello@alecnaparstek.com";
-export const DESIGNER_NAME = "Alec Naparstek";
+export const BRAND = "Naparstek Digital";
+export const CONTACT_EMAIL = "hello@naparstekdigital.com";
+export const CONTACT_PHONE = "913.905.9935";
+export const CONTACT_PHONE_TEL = "9139059935";
+export const DISCIPLINES = ["Web Design", "SEO", "Branding", "Digital Solutions"];

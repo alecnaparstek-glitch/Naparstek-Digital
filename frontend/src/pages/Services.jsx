@@ -9,17 +9,17 @@ const Services = () => {
     <div data-testid="page-services" className="pt-40 md:pt-52">
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-20 md:pb-28">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[#D45B3E]">Services</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Services</p>
         </Reveal>
         <div className="mt-6 overflow-hidden">
           <motion.h1
             initial={{ y: "110%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-heading text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] max-w-4xl"
+            className="font-heading text-4xl sm:text-6xl md:text-8xl font-medium tracking-tighter leading-[0.9] max-w-4xl"
           >
             Everything your business needs{" "}
-            <span className="font-accent italic font-normal text-[#D45B3E]">online.</span>
+            <span className="font-accent italic font-normal text-[#9A9A9A]">online.</span>
           </motion.h1>
         </div>
       </section>
@@ -29,15 +29,18 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <Reveal key={s.num} delay={(i % 3) * 0.06}>
-                <div className="group relative h-full overflow-hidden border-b border-white/10 md:odd:border-r lg:border-r p-8 md:p-12 transition-colors hover:bg-[#16161A]">
-                  <span className="pointer-events-none absolute -bottom-6 -right-2 font-heading text-8xl font-extrabold text-white/5 select-none">
+                <div
+                  data-testid={`service-card-${s.num}`}
+                  className="group relative h-full overflow-hidden border-b border-white/10 md:odd:border-r lg:border-r p-8 md:p-12 transition-colors hover:bg-[#111111]"
+                >
+                  <span className="pointer-events-none absolute -bottom-6 -right-2 font-heading text-8xl font-medium text-white/[0.04] select-none">
                     {s.num}
                   </span>
-                  <p className="text-xs uppercase tracking-[0.2em] text-[#D45B3E] font-semibold">{s.num}</p>
-                  <h2 className="relative mt-6 font-heading text-2xl md:text-3xl font-bold tracking-tight">
+                  <p className="text-xs uppercase tracking-[0.25em] text-[#9A9A9A]">{s.num}</p>
+                  <h2 className="relative mt-6 font-heading text-2xl md:text-3xl font-medium tracking-tight">
                     {s.title}
                   </h2>
-                  <p className="relative mt-5 text-base leading-relaxed text-[#8B8B93]">{s.desc}</p>
+                  <p className="relative mt-5 text-base leading-relaxed text-[#9A9A9A]">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -48,18 +51,16 @@ const Services = () => {
       <section className="py-28 md:py-40">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <Reveal>
-            <div className="rounded-2xl border border-white/10 bg-[#16161A] p-10 md:p-20 relative overflow-hidden">
-              <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#D45B3E]/20 blur-[120px]" />
-              <p className="relative text-xs uppercase tracking-[0.2em] font-semibold text-[#D45B3E]">
-                Have a project in mind?
-              </p>
-              <h2 className="relative mt-6 font-heading text-4xl md:text-6xl font-extrabold tracking-tighter max-w-2xl">
+            <div className="rounded-xl border border-white/12 bg-[#111111] p-10 md:p-20 relative overflow-hidden">
+              <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/[0.05] blur-[120px]" />
+              <p className="relative text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Have a project in mind?</p>
+              <h2 className="relative mt-6 font-heading text-4xl md:text-6xl font-medium tracking-tighter max-w-2xl">
                 Let's turn it into something worth clicking.
               </h2>
               <Link
                 to="/contact"
                 data-testid="services-lets-talk"
-                className="relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#D45B3E] px-8 py-4 text-sm font-medium text-[#F4F4F1] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                className="relative mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-xs uppercase tracking-[0.14em] font-medium text-[#0A0A0A] transition-colors hover:bg-white/90"
               >
                 Let's Talk <ArrowUpRight size={16} />
               </Link>

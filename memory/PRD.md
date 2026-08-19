@@ -33,5 +33,13 @@ Build a premium, modern, multi-page website for a freelance web design business.
 - P2: Individual case-study detail pages per project.
 - P2: Replace portrait/email placeholders with real assets when provided.
 
+## Update (2026-08-19) — Rebrand to "Naparstek Digital"
+- Full monochrome visual identity matching the black business card: near-black #0A0A0A bg, white/soft-gray (#9A9A9A) type, thin borders, wide letter-spacing, geometric N monogram (SVG) used in navbar, hero badge, About profile panel, and footer. Removed terracotta accent + photo.
+- About rewritten: 16-year-old high school student from Olathe, Kansas.
+- Contact details: hello@naparstekdigital.com, 913.905.9935 (nav/footer/contact page).
+- Email alerts: POST /api/inquiries now sends an owner notification via Emergent-managed Resend (non-blocking, guardrail gate). OWNER_EMAIL currently a.naparstek@icloud.com (from card) — change in backend/.env.
+- Tested end-to-end (iteration_2): 100% backend + frontend pass, email 202 verified.
+
 ## Next Tasks
-- Await user's real photo + contact email to replace placeholders.
+- Confirm/replace OWNER_EMAIL for alert recipient.
+- Optional: admin inbox UI for inquiries.
