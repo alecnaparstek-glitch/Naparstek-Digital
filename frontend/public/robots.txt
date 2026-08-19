@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://studio-build-23.preview.emergentagent.com/sitemap.xml

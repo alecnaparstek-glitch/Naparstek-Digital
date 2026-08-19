@@ -97,6 +97,6 @@ export const CARE = [
 ];
 
 export const BRAND = "Naparstek Digital";
-export const CONTACT_EMAIL = "hello@naparstekdigital.com";
+export const CONTACT_EMAIL = "a.naparstek@icloud.com";
 export const DISCIPLINES = ["Web Design", "SEO", "Branding", "Digital Solutions"];
 export const BUDGETS = ["$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+", "Let's discuss"];

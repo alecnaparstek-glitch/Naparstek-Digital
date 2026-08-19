@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import { toast } from "sonner";
 import { Monogram } from "@/components/Monogram";
@@ -277,7 +278,15 @@ const Admin = () => {
     setAuthed(false);
   };
 
-  return authed ? <Inbox_ onLogout={logout} /> : <Login onLogin={() => setAuthed(true)} />;
+  return (
+    <>
+      <Helmet>
+        <title>Inquiry Inbox — Naparstek Digital</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      {authed ? <Inbox_ onLogout={logout} /> : <Login onLogin={() => setAuthed(true)} />}
+    </>
+  );
 };
 
 export default Admin;

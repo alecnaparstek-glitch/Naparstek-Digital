@@ -53,5 +53,11 @@ Build a premium, modern, multi-page website for a freelance web design business.
 ## Admin Credentials
 - /admin — a.naparstek@icloud.com / NaparstekInbox2026! (see /app/memory/test_credentials.md)
 
+## Update (2026-08-19) — SEO + Email
+- Added per-page SEO via react-helmet-async: unique `<title>`, meta description, and canonical on Home/Work/Services/Process/About/Contact. Verified titles/descriptions/canonical swap correctly on client-side navigation (exactly one description per page).
+- Social previews: Open Graph + Twitter card tags with a generated monochrome brand share image (N monogram card). Default OG/title in index.html for no-JS social scrapers.
+- Added favicon.svg (N monogram), theme-color #0A0A0A, robots.txt (disallow /admin) and sitemap.xml. /admin is noindex.
+- Public contact email (Contact page + footer) changed to a.naparstek@icloud.com.
+
 ## Next Tasks
-- Optional: brute-force lockout on login; per-page SEO meta.
+- Optional: brute-force lockout on login; inbox search/status labels. Update sitemap/OG URLs to the final custom domain when live.

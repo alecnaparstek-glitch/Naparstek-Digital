@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import {
   Select,
   SelectContent,
@@ -66,6 +67,11 @@ const Contact = () => {
 
   return (
     <div data-testid="page-contact" className="pt-40 md:pt-52">
+      <Seo
+        title="Start a Project"
+        description="Tell me about your business and what you're looking for, and let's build something great together."
+        path="/contact"
+      />
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-16 md:pb-24">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Start a Project</p>

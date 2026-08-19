@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import { SERVICES } from "@/lib/data";
 
 const Services = () => {
   return (
     <div data-testid="page-services" className="pt-40 md:pt-52">
+      <Seo
+        title="Services"
+        description="Website design, redesigns, mobile optimization, landing pages, ongoing updates and full business website setup — everything your business needs online."
+        path="/services"
+      />
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-20 md:pb-28">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Services</p>

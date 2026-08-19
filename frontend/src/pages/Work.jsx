@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import { BrowserMockup } from "@/components/BrowserMockup";
 import { REAL_PROJECTS, CONCEPTS } from "@/lib/data";
 
 const Work = () => {
   return (
     <div data-testid="page-work" className="pt-40 md:pt-52">
+      <Seo
+        title="Selected Work"
+        description="A look at the websites I've designed and built — real client projects plus self-initiated design concepts across different industries."
+        path="/work"
+      />
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-20 md:pb-28">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Portfolio</p>

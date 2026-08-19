@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import { PROCESS } from "@/lib/data";
 
 const Step = ({ step }) => {
@@ -31,6 +32,11 @@ const Step = ({ step }) => {
 const Process = () => {
   return (
     <div data-testid="page-process" className="pt-40 md:pt-52">
+      <Seo
+        title="Process"
+        description="From idea to launch — a clear, collaborative five-step process: discover, design, build, refine and launch."
+        path="/process"
+      />
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <section className="grid grid-cols-12 gap-8 pb-16 md:pb-24">
           <div className="col-span-12 lg:col-span-8">

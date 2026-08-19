@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import { Monogram } from "@/components/Monogram";
 import { WHY, DISCIPLINES } from "@/lib/data";
 
@@ -112,6 +113,11 @@ const KineticHero = () => {
 const Home = () => {
   return (
     <div data-testid="page-home">
+      <Seo
+        title="Websites That Make Businesses Stand Out"
+        description="Naparstek Digital designs modern, professional websites for small and local businesses that want to look better online and turn visitors into customers."
+        path="/"
+      />
       <KineticHero />
 
       <div className="border-y border-white/10 py-6">

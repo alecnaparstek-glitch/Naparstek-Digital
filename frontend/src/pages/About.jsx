@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
+import { Seo } from "@/components/Seo";
 import { Monogram } from "@/components/Monogram";
 import { CARE } from "@/lib/data";
 
 const About = () => {
   return (
     <div data-testid="page-about" className="pt-40 md:pt-52">
+      <Seo
+        title="About"
+        description="A 16-year-old high school student from Olathe, Kansas building modern, professional websites for local businesses."
+        path="/about"
+      />
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-20 md:pb-28">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">About</p>
