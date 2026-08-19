@@ -2,7 +2,8 @@ import { Reveal } from "@/components/Reveal";
 import { TESTIMONIALS } from "@/lib/data";
 
 export const Testimonials = () => {
-  if (!TESTIMONIALS || TESTIMONIALS.length === 0) return null;
+  const items = (TESTIMONIALS || []).filter((t) => !t.featured);
+  if (items.length === 0) return null;
 
   return (
     <section data-testid="testimonials" className="border-t border-white/10 py-28 md:py-40">
@@ -14,8 +15,12 @@ export const Testimonials = () => {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-px bg-white/10 border border-white/10 md:grid-cols-2">
-          {TESTIMONIALS.map((t, i) => (
+        <div
+          className={`mt-16 grid gap-px bg-white/10 border border-white/10 ${
+            items.length > 1 ? "md:grid-cols-2" : ""
+          }`}
+        >
+          {items.map((t, i) => (
             <Reveal key={i} delay={(i % 2) * 0.08}>
               <figure className="h-full bg-[#0A0A0A] p-8 md:p-12 flex flex-col justify-between transition-colors hover:bg-[#111111]">
                 <span className="font-accent text-6xl leading-none text-white/15 select-none">“</span>

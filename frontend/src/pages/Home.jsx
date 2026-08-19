@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Seo } from "@/components/Seo";
+import { FeaturedQuote } from "@/components/FeaturedQuote";
 import { Monogram } from "@/components/Monogram";
 import { WHY, DISCIPLINES } from "@/lib/data";
 
@@ -175,6 +176,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <FeaturedQuote />
     </div>
   );
 };

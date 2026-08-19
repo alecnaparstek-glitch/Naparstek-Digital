@@ -108,6 +108,7 @@ export const CONTACT_EMAIL = "a.naparstek@icloud.com";
 // ─────────────────────────────────────────────────────────────
 export const TESTIMONIALS = [
   {
+    featured: true,
     quote:
       "Alec did a great job on our website. He was easy to work with, listened to what we wanted, and made the whole process really simple. We love how the website turned out and feel like it does a much better job showing off our work. We'd definitely recommend him if you're looking for someone to build or update your website.",
     name: "Sherry B.",
