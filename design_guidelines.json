@@ -1,0 +1,122 @@
+{
+  "project_name": "Premium Freelance Web Design Portfolio",
+  "theme_strategy": {
+    "mode": "dark",
+    "colors": {
+      "background": "#0D0D0F",
+      "surface": "#16161A",
+      "surface_hover": "#1E1E24",
+      "primary": "#D45B3E",
+      "primary_hover": "#B84A30",
+      "text_main": "#F4F4F1",
+      "text_muted": "#8B8B93",
+      "border": "rgba(244, 244, 241, 0.08)"
+    },
+    "description": "A sophisticated dark charcoal theme paired with warm off-white typography and a tasteful burnt terracotta accent. This creates a premium, authoritative, yet highly creative studio aesthetic. No pure blacks or pure whites."
+  },
+  "typography": {
+    "font_families": {
+      "heading": {
+        "name": "Cabinet Grotesk",
+        "type": "sans-serif",
+        "url": "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400&display=swap"
+      },
+      "accent": {
+        "name": "Cormorant Garamond",
+        "type": "serif",
+        "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      },
+      "body": {
+        "name": "Manrope",
+        "type": "sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      }
+    },
+    "scales": {
+      "h1": "text-5xl md:text-6xl tracking-tighter leading-[0.9] font-extrabold",
+      "h2": "text-4xl md:text-5xl tracking-tight leading-none font-bold",
+      "h3": "text-2xl md:text-3xl leading-tight font-medium",
+      "body": "text-base md:text-lg leading-relaxed text-[#8B8B93]",
+      "overline": "text-xs uppercase tracking-[0.2em] font-semibold text-[#D45B3E]"
+    }
+  },
+  "visual_enhancers": {
+    "gradients": "Avoid generic SaaS gradients. Use localized, very subtle radial glows (e.g., bg-white/5 blur-3xl) behind key elements like the kinetic hero or mockups to create depth.",
+    "borders": "1px solid rgba(244, 244, 241, 0.08). Expose the grid skeleton in the services and process sections using border-collapse techniques.",
+    "surfaces": "Use 'Crystal Glass' strictly for the sticky header (bg-[#0D0D0F]/70 backdrop-blur-xl border-b border-white/10). Use flat solids for everything else.",
+    "textures": "Include a subtle SVG noise overlay fixed to the viewport with opacity-20 and pointer-events-none to give the site an editorial, printed feel."
+  },
+  "motion": {
+    "kinetic_hero": "Staggered line-by-line text reveal. Wrap each line of text in an 'overflow-hidden' container. Animate the inner text from y:'100%' to y:'0%' with a duration of 1s and an easing of [0.16, 1, 0.3, 1].",
+    "scroll_reveals": "Use Framer Motion 'whileInView'. Elements should fade in (opacity: 0 -> 1) and slide up slightly (y: 30 -> 0) as they enter the viewport. Viewport margin: '-100px'.",
+    "smooth_scroll": "Implement Lenis for buttery smooth scrolling. This is MANDATORY for the premium feel.",
+    "micro_interactions": "Buttons should have a slight scale down on tap (scale: 0.98). Portfolio mockups should have a slow, subtle zoom (scale 1.05) on the inner image on hover while the container remains fixed."
+  },
+  "components": {
+    "button": "Pill-shaped (rounded-full). Primary CTA: bg-[#D45B3E] text-[#F4F4F1] px-8 py-4 font-medium transition-all hover:bg-[#B84A30] hover:scale-[1.02].",
+    "browser_mockup": "A container representing a sleek browser window. Classes: `rounded-xl border border-white/10 bg-[#16161A] overflow-hidden`. The top header should be `h-10 border-b border-white/10 bg-[#1A1A1E] flex items-center px-4 gap-2`. Add three small circles (`w-2.5 h-2.5 rounded-full bg-white/20`) to mimic macOS buttons.",
+    "services_card": "Minimalist bento-style card. `border border-white/10 p-8 relative overflow-hidden group`. Include a massive, faint number (e.g., '01') in the background using `text-8xl text-white/5 absolute -bottom-4 -right-4 font-heading`.",
+    "marquee": "Use react-fast-marquee. Very slow speed. Text should be the Cormorant Garamond italic (e.g., 'Digital Experiences • Brand Identity • Creative Direction •'). Low contrast (text-[#8B8B93])."
+  },
+  "layouts_and_grids": {
+    "hero": "Asymmetrical layout. Massive text block on the left taking up 8 columns, right side empty or containing a small spinning badge/accolade.",
+    "portfolio": "Alternating bento grid. One row is a full-width featured project (col-span-12), the next row splits two projects (col-span-6 each).",
+    "spacing": "Exaggerated spacing. Use py-32 or py-40 between major sections to give the content immense breathing room."
+  },
+  "pages_blueprint": {
+    "Home": "Sticky Header -> Kinetic Text Hero ('Websites That Make Businesses Stand Out') -> Editorial Marquee -> Featured Work (Browser Mockups) -> Micro-Services snippet -> Footer.",
+    "Work": "Header -> Intro -> Massive Grid of case studies (Alpaca, Stripes, etc.) -> 'Design Concepts' section (labeled clearly) using a tighter grid -> Footer.",
+    "Services": "Header -> Deep dive numbered cards (01 Web Design, 02 E-Commerce, etc.) -> Process visual timeline (vertical line with branching steps) -> CTA.",
+    "Process": "Header -> Step-by-step breakdown (Discovery, Design, Build, Launch). Use large numbers, sticky scrolling where left side is sticky step name and right side scrolls details.",
+    "About": "Header -> Manifesto (large editorial text paragraph mixing Cabinet and Garamond) -> Profile image + Bio -> Philosophy -> CTA.",
+    "Contact": "Header -> Split layout: Left side contact info & vibe, Right side cleanly designed Shadcn-customized form (Name, Business, Needs, Budget, Details) with dark minimalist inputs."
+  },
+  "media": {
+    "image_handling": "Images inside portfolio mockups must be crisp. Images in the About section should be grayscale/black-and-white to fit the studio aesthetic.",
+    "assets": [
+      {
+        "id": "alpaca_furniture",
+        "url": "https://images.pexels.com/photos/29917912/pexels-photo-29917912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Modern wooden chairs. Use for the 'Alpaca Furniture Revitalization' case study mockup.",
+        "location": "Work / Home Featured Work"
+      },
+      {
+        "id": "stripes_lawn_care",
+        "url": "https://images.pexels.com/photos/3999647/pexels-photo-3999647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Red lawn mower cutting grass. Use for the 'Stripes Lawn Care' case study mockup.",
+        "location": "Work / Home Featured Work"
+      },
+      {
+        "id": "designer_profile",
+        "url": "https://images.unsplash.com/photo-1558730234-d8b2281b0d00?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxjcmVhdGl2ZSUyMGRlc2lnbmVyJTIwcG9ydHJhaXQlMjBzdHVkaW8lMjBibGFjayUyMGFuZCUyMHdoaXRlfGVufDB8fHx8MTc4NzE3MzEyM3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Grayscale portrait of the designer.",
+        "location": "About Page"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install and setup Lenis (`@studio-freight/lenis`) for smooth scrolling. Wrap the app in a Lenis provider.",
+    "Install `framer-motion` for the kinetic hero, scroll reveals, and micro-interactions.",
+    "Install `react-fast-marquee` for the editorial ribbon.",
+    "Use pure HTML/Tailwind for the marketing layouts to maintain absolute control over the grid and overlaps. Avoid generic UI cards.",
+    "For the contact form, use Shadcn components (Form, Input, Textarea, Select, Button) but heavily customize them via Tailwind to match the dark studio theme (e.g., bg-transparent, border-b only, focus:ring-accent).",
+    "Ensure `data-testid` is added to all interactive elements, nav links, form inputs, and buttons.",
+    "Never use pure black (#000000). Always use the defined charcoal (#0D0D0F).",
+    "Never use transparent headers over content without a backdrop-blur. The sticky nav must have a distinct glassmorphism or solid surface.",
+    "In the kinetic hero, split the H1 into an array of words/lines, wrap each in an overflow-hidden span, and use framer-motion to translate Y from 100% to 0%.",
+    "Mix the Cabinet Grotesk font with Cormorant Garamond italicized for words like 'Stand Out' in the hero headline."
+  ],
+  "accessibility": {
+    "contrast": "Ensure all text, especially the #8B8B93 muted text, meets WCAG AA standards against the #0D0D0F background.",
+    "motion": "Respect prefers-reduced-motion via Framer Motion's useReducedMotion hook. If true, swap translateY animations for simple opacity fades.",
+    "focus": "All focus states must be visible. Use focus-visible:ring-2 focus-visible:ring-[#D45B3E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0F]."
+  },
+  "GENERAL_UI_UX_DESIGN_GUIDELINES": [
+    "Do not converge toward generic outputs. Use negative space aggressively to separate components.",
+    "Never center align the App container in CSS. All text must respect natural reading flow.",
+    "Do not apply `transition: all`. Target specific properties like `transition-colors`, `transition-transform`.",
+    "Include a `data-testid` attribute on all interactive elements to support automated testing.",
+    "Never use placeholders for logos or text; use actual styling and provided images.",
+    "Use `sonner` for any toast notifications needed in forms."
+  ]
+}
