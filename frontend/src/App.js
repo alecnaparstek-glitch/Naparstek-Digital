@@ -11,6 +11,7 @@ import Services from "@/pages/Services";
 import Process from "@/pages/Process";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import Admin from "@/pages/Admin";
 
 const Page = ({ children }) => (
   <motion.main
@@ -23,19 +24,25 @@ const Page = ({ children }) => (
   </motion.main>
 );
 
-const AnimatedRoutes = () => {
+const Shell = () => {
   const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Page><Home /></Page>} />
-        <Route path="/work" element={<Page><Work /></Page>} />
-        <Route path="/services" element={<Page><Services /></Page>} />
-        <Route path="/process" element={<Page><Process /></Page>} />
-        <Route path="/about" element={<Page><About /></Page>} />
-        <Route path="/contact" element={<Page><Contact /></Page>} />
-      </Routes>
-    </AnimatePresence>
+    <>
+      {!isAdmin && <Navbar />}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Page><Home /></Page>} />
+          <Route path="/work" element={<Page><Work /></Page>} />
+          <Route path="/services" element={<Page><Services /></Page>} />
+          <Route path="/process" element={<Page><Process /></Page>} />
+          <Route path="/about" element={<Page><About /></Page>} />
+          <Route path="/contact" element={<Page><Contact /></Page>} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </AnimatePresence>
+      {!isAdmin && <Footer />}
+    </>
   );
 };
 
@@ -45,9 +52,7 @@ function App() {
       <div className="noise-overlay" />
       <BrowserRouter>
         <SmoothScroll>
-          <Navbar />
-          <AnimatedRoutes />
-          <Footer />
+          <Shell />
         </SmoothScroll>
       </BrowserRouter>
       <Toaster theme="dark" position="bottom-right" />

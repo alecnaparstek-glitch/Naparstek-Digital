@@ -35,7 +35,7 @@ const Work = () => {
             <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 md:py-28 grid grid-cols-12 gap-8 lg:gap-14 items-center">
               <Reveal className="col-span-12 lg:col-span-7">
                 <a href={p.url} target="_blank" rel="noopener noreferrer" data-testid={`work-mockup-${p.slug}`}>
-                  <BrowserMockup src={p.shot} fallback={p.fallback} url={p.url} alt={p.title} />
+                  <BrowserMockup src={p.shot} fallback={p.fallback} url={p.display} alt={p.title} />
                 </a>
               </Reveal>
               <div className="col-span-12 lg:col-span-5">
@@ -85,8 +85,9 @@ const Work = () => {
                 Exploring different <span className="font-accent italic font-normal text-[#9A9A9A]">styles.</span>
               </h2>
               <p className="mt-6 text-base leading-relaxed text-[#9A9A9A]">
-                Self-initiated concept designs created purely to demonstrate range across industries. These are not
-                real clients — they're studies in what a great website could look like.
+                Alongside my client work, I build concept sites for different kinds of local businesses — a way to
+                stretch my range and try ideas I haven't gotten to use yet. These aren't real clients; they're just
+                me exploring what each of these businesses could look like done right.
               </p>
             </div>
           </Reveal>

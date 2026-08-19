@@ -40,6 +40,18 @@ Build a premium, modern, multi-page website for a freelance web design business.
 - Email alerts: POST /api/inquiries now sends an owner notification via Emergent-managed Resend (non-blocking, guardrail gate). OWNER_EMAIL currently a.naparstek@icloud.com (from card) — change in backend/.env.
 - Tested end-to-end (iteration_2): 100% backend + frontend pass, email 202 verified.
 
+## Update (2026-08-19) — Inbox + Cleanup Pass
+- Added a **private Inquiry Inbox** at `/admin` (JWT login, seeded admin from env). Read/mark-read/delete/reply per inquiry; no marketing chrome on that route. Public GET inquiries endpoint removed (admin-only now).
+- Removed **Featured Work** section from Home (still on Work page).
+- New **Design Concepts**: Ember & Oak, Northline Dental, Fieldhouse Remodeling, Ironside Barbell Club (real grayscale photography).
+- Removed phone number site-wide; email only.
+- Added **$500 – $1,000** budget tier.
+- Work mockups display clean URLs (alpacafurniture.com / stripes.com) in the address bar; live links still open the real sites.
+- Humanized copy across Home/Work/Contact to sound less templated.
+- OWNER_EMAIL / ADMIN_EMAIL = a.naparstek@icloud.com. Tested end-to-end (iteration_3): 100% backend + frontend pass.
+
+## Admin Credentials
+- /admin — a.naparstek@icloud.com / NaparstekInbox2026! (see /app/memory/test_credentials.md)
+
 ## Next Tasks
-- Confirm/replace OWNER_EMAIL for alert recipient.
-- Optional: admin inbox UI for inquiries.
+- Optional: brute-force lockout on login; per-page SEO meta.

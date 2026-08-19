@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Phone, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Monogram } from "@/components/Monogram";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, DISCIPLINES } from "@/lib/data";
+import { CONTACT_EMAIL, DISCIPLINES } from "@/lib/data";
 
 export const Footer = () => {
   return (
@@ -40,22 +40,13 @@ export const Footer = () => {
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-[#9A9A9A] mb-5">Contact</p>
-              <div className="space-y-3">
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  data-testid="footer-email"
-                  className="flex items-center gap-2 text-sm text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors break-all"
-                >
-                  <Mail size={14} className="text-[#9A9A9A] shrink-0" /> {CONTACT_EMAIL}
-                </a>
-                <a
-                  href={`tel:${CONTACT_PHONE_TEL}`}
-                  data-testid="footer-phone"
-                  className="flex items-center gap-2 text-sm text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors"
-                >
-                  <Phone size={14} className="text-[#9A9A9A] shrink-0" /> {CONTACT_PHONE}
-                </a>
-              </div>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                data-testid="footer-email"
+                className="flex items-center gap-2 text-sm text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors break-all"
+              >
+                <Mail size={14} className="text-[#9A9A9A] shrink-0" /> {CONTACT_EMAIL}
+              </a>
             </div>
           </div>
         </div>

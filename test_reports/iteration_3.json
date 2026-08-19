@@ -1,0 +1,23 @@
+{
+  "summary": "Iteration 3 (Admin Inbox + content changes) — 100% pass. Backend: 14/14 pytest (JWT login success + wrong pw 401 + unknown email 401 + malformed email 422 + /api/auth/me protected + valid + invalid token 401; public inquiries 422 validation; admin list/patch/delete all 401 without Bearer; full end-to-end: create inquiry -> appears in admin list sorted desc -> PATCH read toggles + persists -> DELETE returns {status:deleted} -> subsequent DELETE 404 -> PATCH 404 for nonexistent). No _id leakage anywhere. Frontend: 31/31 checks. Home page-home renders and has ZERO featured-live-*/featured-mockup-* selectors and zero tel: links. Work page shows work-mockup-alpaca-furniture + work-mockup-stripes-lawn-care with display URLs alpacafurniture.com and stripes.com visible; all 4 new concept titles (Ember & Oak, Northline Dental, Fieldhouse Remodeling, Ironside Barbell Club) render. Contact form has no tel: links and contact-budget dropdown includes '$500 – $1,000'. Admin: /admin renders admin-login WITHOUT marketing Navbar/Footer. Wrong password stays on login and shows 'Invalid email or password' error toast. Correct login opens admin-inbox; a freshly seeded inquiry appears via its admin-inquiry-<id>; admin-toggle-read-<id> toggles read (persisted after admin-refresh, button label flips to 'Mark unread'); admin-delete-<id> removes it from the list (toast 'Inquiry deleted.'); admin-logout returns to admin-login and clears the nd_admin_token from localStorage; after logout GET /api/admin/inquiries returns 401. All 6 marketing routes (/,/work,/services,/process,/about,/contact) load with page-* selectors and Navbar visible.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": ["/app/backend/tests/backend_test.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py: JWT secret loaded from env; bcrypt hashing; get_current_admin correctly returns 401 on missing/expired/invalid tokens — good.",
+    "startup seed_admin is idempotent AND updates password_hash if ADMIN_PASSWORD changed — matches auth playbook.",
+    "GET /api/admin/inquiries excludes _id at driver projection level; PATCH uses find_one_and_update with projection={_id:0} — good.",
+    "Admin.jsx stores token in localStorage 'nd_admin_token' (not httpOnly cookie). This is acceptable for a single-admin private page but worth noting — an XSS on the marketing site could exfiltrate the token. Since the admin surface is small and separated by route, low risk.",
+    "No rate-limiting / brute-force lockout on POST /api/auth/login (playbook mentions 5-fail lockout). Consider adding a simple in-memory or Mongo counter for production. Non-blocking for this MVP.",
+    "server.py currently has no GET /api/inquiries public endpoint (only admin). The previous iteration_2 test file expected one; test file has been rewritten accordingly."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "Admin: a.naparstek@icloud.com / NaparstekInbox2026! (from /app/memory/test_credentials.md).",
+  "seed_data_creation": "Backend pytest full-flow test creates one TEST_<hex> inquiry and DELETEs it in the same test (finally block). Frontend admin test seeds one TESTUI_<hex> inquiry via POST /api/inquiries and deletes it via the admin UI. DB is clean after this run. Each POST /api/inquiries fires one real owner-notification email (202) — expected.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Admin token key = nd_admin_token. Admin dashboard has no Navbar/Footer (App.js hides them when pathname starts with /admin). Inquiries are sorted desc by created_at, so newest inquiry is items[0]. Bcrypt hash is generated at seed time from ADMIN_PASSWORD env; if you change the env you must restart backend (supervisor) — the seed_admin startup hook will update the hash. Concept titles live in /app/frontend/src/lib/data.js CONCEPTS. Real work project display URLs live in REAL_PROJECTS[].display.",
+  "rca of the issue": "N/A — no bugs found."
+}

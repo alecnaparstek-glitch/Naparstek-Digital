@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
-import { ArrowUpRight, Check, Phone, Mail } from "lucide-react";
+import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import {
   Select,
@@ -11,12 +11,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL } from "@/lib/data";
+import { CONTACT_EMAIL, BUDGETS } from "@/lib/data";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const NEEDS = ["New Website", "Website Redesign", "Landing Page", "SEO", "Branding", "Mobile Optimization", "Website Updates", "Not sure yet"];
-const BUDGETS = ["Under $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+", "Let's discuss"];
 
 const fieldBase =
   "w-full bg-transparent border-b border-white/15 py-3 text-base text-[#F5F5F5] placeholder:text-[#9A9A9A]/60 focus:outline-none focus:border-[#F5F5F5] transition-colors";
@@ -89,8 +88,8 @@ const Contact = () => {
           <div className="col-span-12 lg:col-span-4">
             <Reveal>
               <p className="text-base md:text-lg leading-relaxed text-[#9A9A9A]">
-                Tell me a little about your business and what you're looking for. I read every message personally and
-                usually reply within a day or two.
+                Tell me a bit about your business and what you have in mind — even if it's still rough. I read every
+                message myself and usually get back to you within a day or two.
               </p>
               <div className="mt-12 space-y-6">
                 <div>
@@ -101,16 +100,6 @@ const Contact = () => {
                     className="flex items-center gap-3 font-heading text-lg md:text-xl font-medium text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors break-all"
                   >
                     <Mail size={18} className="text-[#9A9A9A] shrink-0" /> {CONTACT_EMAIL}
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-[#9A9A9A] mb-3">Phone</p>
-                  <a
-                    href={`tel:${CONTACT_PHONE_TEL}`}
-                    data-testid="contact-phone-link"
-                    className="flex items-center gap-3 font-heading text-lg md:text-xl font-medium text-[#F5F5F5] hover:text-[#9A9A9A] transition-colors"
-                  >
-                    <Phone size={18} className="text-[#9A9A9A] shrink-0" /> {CONTACT_PHONE}
                   </a>
                 </div>
               </div>

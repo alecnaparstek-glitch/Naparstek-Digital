@@ -7,11 +7,12 @@ export const REAL_PROJECTS = [
     title: "Alpaca Furniture Revitalization",
     category: "Furniture Restoration — Kansas City",
     url: "https://alpaca-furniture-revitalization.alec-naparstek.workers.dev/",
+    display: "alpacafurniture.com",
     shot: "https://image.thum.io/get/width/1280/crop/1000/noanimate/https://alpaca-furniture-revitalization.alec-naparstek.workers.dev/",
     fallback:
       "https://images.pexels.com/photos/29917912/pexels-photo-29917912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     description:
-      "A sophisticated furniture revitalization website focused on craftsmanship, before-and-after transformations, and premium presentation.",
+      "A furniture revitalization studio in Kansas City that turns tired old pieces into something people fall in love with again. The site leans into the craft — clean before-and-after pairings, warm neutrals, and room to let each piece breathe.",
     highlights: ["Editorial layout", "Before / after showcase", "Warm minimal palette", "Craft-first storytelling"],
   },
   {
@@ -20,11 +21,12 @@ export const REAL_PROJECTS = [
     title: "Stripes Lawn Care",
     category: "Local Service — Olathe, Kansas",
     url: "https://stripes-lawn-care.alec-naparstek.workers.dev/",
+    display: "stripes.com",
     shot: "https://image.thum.io/get/width/1280/crop/1000/noanimate/https://stripes-lawn-care.alec-naparstek.workers.dev/",
     fallback:
       "https://images.pexels.com/photos/3999647/pexels-photo-3999647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     description:
-      "A modern local-service website designed for a lawn care business, with strong green branding, clear pricing, service information, and an easy path to getting a quote.",
+      "A local lawn care business that needed to look as sharp as the yards they cut. Bold green branding, pricing you can actually understand, and a quote button that's never more than a tap away.",
     highlights: ["Clear pricing tiers", "Bold local branding", "Service breakdown", "Fast path to a quote"],
   },
 ];
@@ -32,31 +34,31 @@ export const REAL_PROJECTS = [
 export const CONCEPTS = [
   {
     label: "Concept Design",
-    title: "Bright Dental Practice",
-    category: "Healthcare",
+    title: "Ember & Oak",
+    category: "Wood-Fired Kitchen",
     image:
-      "https://images.pexels.com/photos/9062527/pexels-photo-9062527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1526069631228-723c945bea6b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
   },
   {
     label: "Concept Design",
-    title: "Luxury Home Remodeling",
-    category: "Construction",
+    title: "Northline Dental",
+    category: "Dental Care",
     image:
-      "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
   },
   {
     label: "Concept Design",
-    title: "Neighborhood Restaurant",
-    category: "Hospitality",
+    title: "Fieldhouse Remodeling",
+    category: "Home Renovation",
     image:
-      "https://images.unsplash.com/photo-1574966739987-65e38db0f7ce?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
+      "https://images.unsplash.com/photo-1505798577917-a65157d3320a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
   },
   {
     label: "Concept Design",
-    title: "Boutique Fitness Studio",
-    category: "Wellness",
+    title: "Ironside Barbell Club",
+    category: "Strength Gym",
     image:
-      "https://images.unsplash.com/photo-1637430308606-86576d8fef3c?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
+      "https://images.pexels.com/photos/19025673/pexels-photo-19025673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=700&w=1000",
   },
 ];
 
@@ -96,6 +98,5 @@ export const CARE = [
 
 export const BRAND = "Naparstek Digital";
 export const CONTACT_EMAIL = "hello@naparstekdigital.com";
-export const CONTACT_PHONE = "913.905.9935";
-export const CONTACT_PHONE_TEL = "9139059935";
 export const DISCIPLINES = ["Web Design", "SEO", "Branding", "Digital Solutions"];
+export const BUDGETS = ["$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+", "Let's discuss"];

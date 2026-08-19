@@ -4,9 +4,8 @@ import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { BrowserMockup } from "@/components/BrowserMockup";
 import { Monogram } from "@/components/Monogram";
-import { REAL_PROJECTS, WHY, DISCIPLINES } from "@/lib/data";
+import { WHY, DISCIPLINES } from "@/lib/data";
 
 const HERO_LINES = [
   [{ t: "Websites That" }],
@@ -142,62 +141,10 @@ const Home = () => {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-8 text-base md:text-lg leading-relaxed text-[#9A9A9A] max-w-2xl">
-                No bloated agency process, no confusing jargon. Just thoughtful design, clean code, and a website
-                that actually helps your business look the part and win more customers.
+                No agency runaround, no jargon — just one person who actually cares how your site turns out. I build
+                the whole thing myself, so it looks the way it should and helps you win the customers you're after.
               </p>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Work */}
-      <section className="border-t border-white/10 py-28 md:py-40">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-          <Reveal>
-            <div className="flex items-end justify-between gap-6 mb-16">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-[#9A9A9A]">Featured Work</p>
-                <h2 className="mt-4 font-heading text-4xl md:text-6xl font-medium tracking-tighter">
-                  Selected projects.
-                </h2>
-              </div>
-              <Link
-                to="/work"
-                data-testid="featured-all-work"
-                className="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-[#9A9A9A] hover:text-[#F5F5F5] transition-colors whitespace-nowrap"
-              >
-                All work <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className="space-y-24">
-            {REAL_PROJECTS.map((p, i) => (
-              <Reveal key={p.slug}>
-                <div className="grid grid-cols-12 gap-8 lg:gap-14 items-center">
-                  <div className={`col-span-12 lg:col-span-7 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <a href={p.url} target="_blank" rel="noopener noreferrer" data-testid={`featured-mockup-${p.slug}`}>
-                      <BrowserMockup src={p.shot} fallback={p.fallback} url={p.url} alt={p.title} />
-                    </a>
-                  </div>
-                  <div className={`col-span-12 lg:col-span-5 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <p className="font-accent italic text-3xl text-[#9A9A9A]">{p.index}</p>
-                    <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[#9A9A9A]">{p.category}</p>
-                    <h3 className="mt-4 font-heading text-3xl md:text-4xl font-medium tracking-tight">{p.title}</h3>
-                    <p className="mt-5 text-base leading-relaxed text-[#9A9A9A]">{p.description}</p>
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`featured-live-${p.slug}`}
-                      className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] font-medium text-[#F5F5F5] link-underline"
-                    >
-                      View Live Site <ArrowUpRight size={16} className="text-[#9A9A9A]" />
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
