@@ -109,15 +109,15 @@ export const CONTACT_EMAIL = "a.naparstek@icloud.com";
 export const TESTIMONIALS = [
   {
     quote:
-      "Replace this with a real quote from one of your clients — a sentence or two on what it was like working with you and the result they got.",
-    name: "Client Name",
-    role: "Business Name, City",
+      "Alec did a great job on our website. He was easy to work with, listened to what we wanted, and made the whole process really simple. We love how the website turned out and feel like it does a much better job showing off our work. We'd definitely recommend him if you're looking for someone to build or update your website.",
+    name: "Sherry B.",
+    role: "Alpaca Furniture Revitalization",
   },
   {
     quote:
-      "A second genuine client quote goes here. Keep it specific and in their own words — that's what makes it believable.",
-    name: "Client Name",
-    role: "Business Name, City",
+      "Alec did a really good job with our website. He took the time to understand what we wanted and made the site look clean, professional, and easy to use. He was easy to communicate with and made changes when we asked. We're really happy with how it turned out and would definitely recommend him to other businesses.",
+    name: "Stripes Lawn Care",
+    role: "Olathe, Kansas",
   },
 ];
 export const DISCIPLINES = ["Web Design", "SEO", "Branding", "Digital Solutions"];
