@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Seo } from "@/components/Seo";
+import { Testimonials } from "@/components/Testimonials";
 import { BrowserMockup } from "@/components/BrowserMockup";
 import { REAL_PROJECTS, CONCEPTS } from "@/lib/data";
 
@@ -80,6 +81,8 @@ const Work = () => {
           </div>
         ))}
       </section>
+
+      <Testimonials />
 
       {/* Design Concepts */}
       <section className="py-28 md:py-40">

@@ -98,5 +98,27 @@ export const CARE = [
 
 export const BRAND = "Naparstek Digital";
 export const CONTACT_EMAIL = "a.naparstek@icloud.com";
+
+// ─────────────────────────────────────────────────────────────
+// TESTIMONIALS — real client quotes only.
+// Replace the example entries below with genuine quotes from your
+// clients (e.g. Alpaca Furniture, Stripes Lawn Care). To hide the
+// whole section until you have real reviews, set this to: []
+//   { quote: "...", name: "Client Name", role: "Business, City" }
+// ─────────────────────────────────────────────────────────────
+export const TESTIMONIALS = [
+  {
+    quote:
+      "Replace this with a real quote from one of your clients — a sentence or two on what it was like working with you and the result they got.",
+    name: "Client Name",
+    role: "Business Name, City",
+  },
+  {
+    quote:
+      "A second genuine client quote goes here. Keep it specific and in their own words — that's what makes it believable.",
+    name: "Client Name",
+    role: "Business Name, City",
+  },
+];
 export const DISCIPLINES = ["Web Design", "SEO", "Branding", "Digital Solutions"];
 export const BUDGETS = ["$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+", "Let's discuss"];
